@@ -39,29 +39,43 @@ public class RegisterActivity extends AppCompatActivity {
         email = (EditText) findViewById(R.id.mail);
         phone = (EditText) findViewById(R.id.phone);
 
+        text_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                //bikin toast (massagebox)
+                Toast.makeText(RegisterActivity.this, "Silahkan Login", Toast.LENGTH_SHORT).show();
+
+                finish();
+
+            }
+        });
+
+
         //SetClickOnlistener berfungsi untuk memberi aksi
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(email.getText().toString().equals("") || password.getText().toString().equals("") ||
-                username.getText().toString().equals("") || phone.getText().toString().equals("")) {
+                if (email.getText().toString().equals("") || password.getText().toString().equals("") ||
+                        username.getText().toString().equals("") || phone.getText().toString().equals("")) {
                     Toast.makeText(RegisterActivity.this, "Harap Isi Data Dengan Lengkap", Toast.LENGTH_SHORT).show();
                 } else {
 
                     register();
                 }
-                }
+            }
         });
 
     }
 
-            @Override
-            public void onBackPressed() {
-                RegisterActivity.super.onBackPressed();
-                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
-            }
+    @Override
+    public void onBackPressed() {
+        RegisterActivity.super.onBackPressed();
+        startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+    }
 
-        private void register() {
+    private void register() {
 
         RestApi restApi = InitRetrofit.getInstance();
 

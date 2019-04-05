@@ -38,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(email.getText().toString().equals("") || password.getText().toString().equals("")) {
+                if (email.getText().toString().equals("") || password.getText().toString().equals("")) {
                     Toast.makeText(LoginActivity.this, "Harap Isi Username dan Password", Toast.LENGTH_SHORT).show();
                 } else {
 
@@ -53,11 +53,11 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                    startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
-                    //bikin toast (massagebox)
-                    Toast.makeText(LoginActivity.this, "Silahkan Registrasi", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+                //bikin toast (massagebox)
+                Toast.makeText(LoginActivity.this, "Silahkan Registrasi", Toast.LENGTH_SHORT).show();
 
-                    finish();
+                finish();
 
             }
         });
@@ -65,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    private void login(){
+    private void login() {
         RestApi restApi = InitRetrofit.getInstance();
 
         Call<ResponseLogin> loginCall = restApi.loginUser(
@@ -77,15 +77,15 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<ResponseLogin> call, Response<ResponseLogin> response) {
 
-                if(response.isSuccessful()) {
+                if (response.isSuccessful()) {
                     String result = response.body().getResponse();
 
-                    if(result.equals("success")){
+                    if (result.equals("success")) {
                         startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                         //bikin toast (massagebox)
                         finish();
                         Toast.makeText(LoginActivity.this, result, Toast.LENGTH_SHORT).show();
-                    } else if(result.equals(("failed"))){
+                    } else if (result.equals(("failed"))) {
                         Toast.makeText(LoginActivity.this, result, Toast.LENGTH_SHORT).show();
                     }
                 }
