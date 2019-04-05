@@ -1,4 +1,4 @@
-package com.example.contentarticle;
+package com.example.contentarticle.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.view.View;
+
+import com.example.contentarticle.R;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -26,7 +28,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(RegisterActivity.this,MainActivity.class));
+                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
 
                 //bikin toast (massagebox)
                 Toast.makeText(RegisterActivity.this, "Silahkan Login", Toast.LENGTH_SHORT).show();
@@ -41,7 +43,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onBackPressed() {
                 RegisterActivity.super.onBackPressed();
-                startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
             }
 
 }
