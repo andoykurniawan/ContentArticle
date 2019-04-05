@@ -7,6 +7,7 @@
     android:background="#424242"
     tools:context=".activity.RegisterActivity">
 
+
     <LinearLayout
         android:layout_gravity="center"
         android:layout_width="match_parent"
@@ -14,19 +15,21 @@
         android:background="#424242"
         android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_gravity="center"
-            android:background="@drawable/test"
-            android:layout_marginBottom="50dp"
-            android:layout_height="100dp" />
-
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#424242"
             android:orientation="vertical">
 
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_gravity="center"
+                android:background="@drawable/test"
+                android:layout_marginBottom="50dp"
+                android:layout_height="100dp" />
             <EditText
                 android:id="@+id/username"
                 android:layout_width="match_parent"
@@ -96,6 +99,7 @@
                 android:layout_height="match_parent" />
 
         </LinearLayout>
-
+        </ScrollView>
     </LinearLayout>
+
     </LinearLayout>
