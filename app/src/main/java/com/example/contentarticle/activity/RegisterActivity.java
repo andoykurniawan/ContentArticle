@@ -45,7 +45,7 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(email.getText().toString().equals("") || password.getText().toString().equals("") ||
                 username.getText().toString().equals("") || phone.getText().toString().equals("")) {
-                    Toast.makeText(RegisterActivity.this, "Harap Isi Username dan Password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, "Harap Isi Data Dengan Lengkap", Toast.LENGTH_SHORT).show();
                 } else {
 
                     register();
