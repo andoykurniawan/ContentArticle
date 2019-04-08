@@ -24,7 +24,7 @@
                 android:id="@+id/back"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:background="@drawable/ic_arrow_back_black_24dp"/>
+                android:background="@drawable/ic_arrow_back_white_24dp"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -120,6 +120,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
+                android:inputType="number"
                 android:textColor="#000"
                 android:textColorHint="#000"
                 android:textSize="20dp"
