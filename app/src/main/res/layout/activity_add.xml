@@ -62,6 +62,7 @@
                 android:textSize="15dp"/>
 
             <RadioGroup
+                android:id="@+id/radio_sts"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
