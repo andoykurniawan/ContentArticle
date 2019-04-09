@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.example.contentarticle.R;
 import com.example.contentarticle.activity.DetailContentActivity;
 import com.example.contentarticle.activity.HomeActivity;
+import com.example.contentarticle.activity.UpdateActivity;
 import com.example.contentarticle.helper.DatabaseClient;
 import com.example.contentarticle.model.room.Content;
 
@@ -73,6 +74,19 @@ public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.ContentV
 
             itemView.setOnClickListener(this);
 
+            edit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    Content content = contentList.get(getAdapterPosition());
+
+                    Intent intent = new Intent(mContext, UpdateActivity.class);
+                    intent.putExtra("contentEdit", content);
+                    mContext.startActivity(intent);
+                    ((Activity) mContext).finish();
+                }
+            });
+
             delete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -107,6 +121,17 @@ public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.ContentV
             intent.putExtra("contentData", content);
             mContext.startActivity(intent);
             ((Activity) mContext).finish();
+        }
+    }
+
+    private void EditContent(final Content content) {
+
+        class edit extends AsyncTask<Void,Void,Void> {
+            @Override
+            protected Void doInBackground(Void... voids) {
+
+                return null;
+            }
         }
     }
 

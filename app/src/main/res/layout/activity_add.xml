@@ -83,9 +83,6 @@
                     android:textSize="20dp" />
             </RadioGroup>
 
-
-
-
             <EditText
                 android:id="@+id/content1"
                 android:layout_width="match_parent"
