@@ -124,17 +124,6 @@ public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.ContentV
         }
     }
 
-    private void EditContent(final Content content) {
-
-        class edit extends AsyncTask<Void,Void,Void> {
-            @Override
-            protected Void doInBackground(Void... voids) {
-
-                return null;
-            }
-        }
-    }
-
     private void DeleteContent(final Content content) {
 
         class delete extends AsyncTask<Void, Void, Void> {
