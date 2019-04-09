@@ -1,16 +1,27 @@
 package com.example.contentarticle.activity;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.contentarticle.R;
+import com.example.contentarticle.adapter.ContentAdapter;
+import com.example.contentarticle.helper.DatabaseClient;
+import com.example.contentarticle.model.room.Content;
+
+import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
+
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +30,10 @@ public class HomeActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerview_tasks);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        getmyContent();
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,8 +41,38 @@ public class HomeActivity extends AppCompatActivity {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
                 startActivity(new Intent(HomeActivity.this, AddActivity.class));
+                finish();
+
+
             }
         });
     }
 
+    private void getmyContent() {
+        class GetContent extends AsyncTask<Void, Void, List<Content>> {
+            @Override
+            protected List<Content> doInBackground(Void... voids) {
+
+                List<Content> contentList = DatabaseClient.
+                        getInstance(getApplicationContext()).
+                        getAppDatabase().
+                        contentDao().
+                        getAll();
+
+                return contentList;
+            }
+
+            @Override
+            protected void onPostExecute(List<Content> contents) {
+                super.onPostExecute(contents);
+
+                ContentAdapter contentAdapter = new ContentAdapter(HomeActivity.this, contents);
+                recyclerView.setAdapter(contentAdapter);
+            }
+        }
+
+        GetContent getContent = new GetContent();
+        getContent.execute();
+
+    }
 }

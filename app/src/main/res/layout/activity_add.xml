@@ -39,34 +39,34 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="20dp">
+            android:layout_margin="20dp"
+            android:orientation="vertical">
 
             <EditText
                 android:id="@+id/judul"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:hint="Judul"
                 android:padding="10dp"
                 android:textColor="#000"
                 android:textColorHint="#000"
-                android:textSize="20dp"
-                android:layout_marginBottom="10dp"/>
+                android:textSize="20dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Gender"
                 android:padding="10dp"
+                android:text="Gender"
                 android:textColor="#000"
-                android:textSize="15dp"/>
+                android:textSize="15dp" />
 
             <RadioGroup
                 android:id="@+id/radio_sts"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/male"
@@ -80,52 +80,49 @@
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:text="Female"
-                    android:textSize="20dp"/>
+                    android:textSize="20dp" />
             </RadioGroup>
 
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Content"
-                android:padding="10dp"
-                android:textColor="#000"
-                android:textSize="20dp"
-                android:layout_marginBottom="30dp"/>
+
 
             <EditText
                 android:id="@+id/content1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:padding="10dp"
+                android:hint="Content"
+                android:gravity="left"
+                android:inputType="textMultiLine"
+                android:lines="5"
                 android:textColor="#000"
                 android:textColorHint="#000"
-                android:textSize="20dp"
-                android:layout_marginBottom="10dp"/>
+                android:textSize="20dp" />
 
             <EditText
                 android:id="@+id/tanggal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:focusable="false"
+                android:hint="Tanggal"
                 android:padding="10dp"
                 android:textColor="#000"
-                android:hint="Tanggal"
                 android:textColorHint="#000"
-                android:textSize="20dp"
-                android:focusable="false"
-                android:layout_marginBottom="25dp"/>
+                android:textSize="20dp" />
 
             <EditText
                 android:id="@+id/phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
+                android:layout_marginBottom="25dp"
+                android:hint="Phone"
                 android:inputType="number"
+                android:padding="10dp"
                 android:textColor="#000"
                 android:textColorHint="#000"
-                android:textSize="20dp"
-                android:hint="Phone"
-                android:layout_marginBottom="25dp"/>
+                android:textSize="20dp" />
 
             <Button
                 android:id="@+id/save"
@@ -137,7 +134,7 @@
                 android:gravity="center"
                 android:text="Save"
                 android:textColor="#FFF"
-                android:textSize="20dp"/>
+                android:textSize="20dp" />
         </LinearLayout>
 
     </LinearLayout>
